@@ -39,9 +39,10 @@ $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
 
 if (!$conn) {
     die("<script>
-alert('Falha na Conexão: .')" . mysqli_connect_error() . ";</script>");
+alert('Falha na Conexão: " . mysqli_connect_error() . "');
+</script>");
 } else {
-    //echo "Conexao realizada com sucesso";
+    // Conexão realizada com sucesso
 }
 
 session_start();
@@ -102,10 +103,10 @@ if (!isset($_SESSION['UsuarioID']) and (!isset($_SESSION['UsuarioNivel']))) {
 </div>
 
 <a class="carousel-control-prev" href="#carousel-example" role="button" data-slide="prev">
-    <span class="fa fa-chevron-circle-left fa-xl" style="color: black; text-size: 30px"></span>
+    <span class="fa fa-chevron-circle-left fa-xl" style="color: black; font-size: 30px"></span>
 </a>
 <a class="carousel-control-next" href="#carousel-example" role="button" data-slide="next">
-    <span class="fa fa-chevron-circle-right fa-xl" style="color: black; text-size: 30px"></span>
+    <span class="fa fa-chevron-circle-right fa-xl" style="color: black; font-size: 30px"></span>
 </a>
 </div>
     </div>
