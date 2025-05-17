@@ -149,31 +149,25 @@
                             <input class="form-control" list="codEmpresa" name="codEmpresa" aria-describedby="emailHelp" />
                             <datalist id="codEmpresa" name="codEmpresa">
                             
+<?php
+require_once 'conexao.php'; 
+session_start();
+if (!isset($_SESSION['UsuarioID']) and (!isset($_SESSION['UsuarioNivel']))) {
+    header("Location: http://localhost/gestaoepi/codes/login.html");
+    exit;
+}
+?>
+
                                 <?php
-                                $servidor = "localhost";
-                                $usuario = "root";
-                                $senha = "";
-                                $dbname = "gestaoepi_bd";
-                                //Criar a conexao
-                                $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
-
-                                if (!$conn) {
-                                    die("<script>
-                                    alert('Falha na Conexão: .')" . mysqli_connect_error() . ";</script>");
-                                } else {
-                                    //echo "Conexao realizada com sucesso";
-                                }
-
                                 $selectDepartamentos = "select * from `empresas`";
                                 $result = mysqli_query($conn, $selectDepartamentos);
 
                                 while ($rowDepartamentos = mysqli_fetch_assoc($result)) { ?>
                                     <option value="<?php echo $rowDepartamentos['codEmpresa']; ?>"><?php echo $rowDepartamentos['nomeEmpresa']; ?>
-                                    </option><?php
-
-                                            }
-                                                ?>
-                            </input>
+                                    </option>
+                                <?php
+                                }
+                                ?>
                             </datalist>
                         </div>
 

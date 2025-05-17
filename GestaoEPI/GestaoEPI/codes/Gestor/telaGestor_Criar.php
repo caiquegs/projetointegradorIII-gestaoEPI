@@ -28,20 +28,15 @@
 </head>
 
 <body>
-    <?php
-    $servidor = "localhost";
-    $usuario = "root";
-    $senha = "";
-    $dbname = "gestaoepi_bd";
-    //Criar a conexao
-    $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
+<?php
+require_once 'conexao.php'; 
+session_start();
+if (!isset($_SESSION['UsuarioID']) and (!isset($_SESSION['UsuarioNivel']))) {
+    header("Location: http://localhost/gestaoepi/codes/login.html");
+    exit;
+}
+?>
 
-    if (!$conn) {
-        die("<script>
-        alert('Falha na Conexão: .')" . mysqli_connect_error() . ";</>");
-    } else {
-        //echo "Conexao realizada com sucesso";
-    }
 
     session_start();
 

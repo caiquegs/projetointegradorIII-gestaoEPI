@@ -35,7 +35,6 @@
     if (!isset($_SESSION['UsuarioID']) and (!isset($_SESSION['UsuarioNivel']))) {
         header("Location: http://localhost/gestaoepi/codes/login.html");
         exit;
-    }
 
 
     ?>
@@ -86,19 +85,14 @@
                             <select class="form-control" id="Nome_Empresa" name="Nome_Empresa" aria-describedby="emailHelp" >
                                 <option>Selecione</option>
                                 <?php
-                                $servidor = "localhost";
-                                $usuario = "root";
-                                $senha = "";
-                                $dbname = "gestaoepi_bd";
-                                //Criar a conexao
-                                $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
+require_once 'conexao.php'; 
+session_start();
+if (!isset($_SESSION['UsuarioID']) and (!isset($_SESSION['UsuarioNivel']))) {
+    header("Location: http://localhost/gestaoepi/codes/login.html");
+    exit;
+}
+?>
 
-                                if (!$conn) {
-                                    die("<script>
-                                    alert('Falha na Conexão: .')" . mysqli_connect_error() . ";</script>");
-                                } else {
-                                    //echo "Conexao realizada com sucesso";
-                                }
                                 
                                     $selectEmpresas = "select * from `empresas`";
                                     $result = mysqli_query($conn, $selectEmpresas);

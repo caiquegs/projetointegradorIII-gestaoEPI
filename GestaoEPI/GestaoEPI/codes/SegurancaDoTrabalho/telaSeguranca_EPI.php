@@ -83,20 +83,15 @@ if (!isset($_SESSION['UsuarioID']) and (!isset($_SESSION['UsuarioNivel']))) {
                             <div class="input-group mb-3">
                                 <input class="form-control" list="codCadastro" name="codCadastro" aria-describedby="emailHelp" />
                                 <datalist id="codCadastro" name="codCadastro">
+<?php
+require_once 'conexao.php'; 
+session_start();
+if (!isset($_SESSION['UsuarioID']) and (!isset($_SESSION['UsuarioNivel']))) {
+    header("Location: http://localhost/gestaoepi/codes/login.html");
+    exit;
+}
+?>
                                     <?php
-                                    $servidor = "localhost";
-                                    $usuario = "root";
-                                    $senha = "";
-                                    $dbname = "gestaoepi_bd";
-                                    //Criar a conexao
-                                    $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
-
-                                    if (!$conn) {
-                                        die("<script>
-                                    alert('Falha na Conexão: .')" . mysqli_connect_error() . ";</>");
-                                    } else {
-                                        //echo "Conexao realizada com sucesso";
-                                    }
 
                                     $selectDepartamentos = "SELECT * FROM `epis`";
                                     $result = mysqli_query($conn, $selectDepartamentos);

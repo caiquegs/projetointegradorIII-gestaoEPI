@@ -86,10 +86,10 @@
 </div>
 
 <a class="carousel-control-prev" href="#carousel-example" role="button" data-slide="prev">
-    <span class="fa fa-chevron-circle-left fa-xl" style="color: black; text-size: 30px"></span>
+    <span class="fa fa-chevron-circle-left fa-xl" style="color: black; font-size: 30px"></span>
 </a>
 <a class="carousel-control-next" href="#carousel-example" role="button" data-slide="next">
-    <span class="fa fa-chevron-circle-right fa-xl" style="color: black; text-size: 30px"></span>
+    <span class="fa fa-chevron-circle-right fa-xl" style="color: black; font-size: 30px"></span>
 </a>
 </div>
     </div>
