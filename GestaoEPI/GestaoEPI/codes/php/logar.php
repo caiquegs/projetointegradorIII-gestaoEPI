@@ -10,7 +10,7 @@ include "conexao.php";
   $senha = $_POST['senha'];
 
   // Validação do usuário/senha digitados
-  $sql = "SELECT `id`, `nivel` FROM `usuarios` WHERE (`usuario` = '". $usuario ."') AND (`senha` = '". sha1($senha) ."') AND (`ativo` = 1) LIMIT 1";
+  $sql = "SELECT `id`, `nivel_acesso` FROM `usuarios` WHERE (`usuario` = '". $usuario ."') AND (`senha` = '". sha1($senha) ."') AND (`ativo` = 1) LIMIT 1";
   $query = mysqli_query($conn, $sql);
 
 
@@ -24,31 +24,31 @@ include "conexao.php";
       if (!isset($_SESSION)) session_start();
 
       // Salva os dados encontrados na sessão
-      $_SESSION['UsuarioID'] = $resultado['id'];
-      $_SESSION['UsuarioNivel'] = $resultado['nivel'];
+      $_SESSION['usuario_id'] = $resultado['id'];
+      $_SESSION['nivel_acesso'] = $resultado['nivel'];
       
 
   }
 
-  if (isset($_SESSION['UsuarioID']) AND ($_SESSION['UsuarioNivel'] == 1)) {
+  if (isset($_SESSION['usuario_id']) AND ($_SESSION['nivel_acesso'] == 1)) {
 
     
     // Redireciona o visitante de volta pro login
     header("Location: http://localhost/gestaoepi/codes/Gestor/telaGestor.php");
 
-}elseif (isset($_SESSION['UsuarioID']) AND ($_SESSION['UsuarioNivel'] == 2)) {
+}elseif (isset($_SESSION['usuario_id']) AND ($_SESSION['nivel_acesso'] == 2)) {
     // Redireciona o visitante de volta pro login
     header("Location: http://localhost/gestaoepi/codes/SegurancaDoTrabalho/telaSeguranca.php");
 
-}elseif (isset($_SESSION['UsuarioID']) AND ($_SESSION['UsuarioNivel'] == 3)) {
+}elseif (isset($_SESSION['usuario_id']) AND ($_SESSION['nivel_acesso'] == 3)) {
     // Redireciona o visitante de volta pro login
     header("Location: http://localhost/gestaoepi/codes/Logistica/telaLogistica.php");
 }
-elseif (isset($_SESSION['UsuarioID']) AND ($_SESSION['UsuarioNivel'] == 4)) {
+elseif (isset($_SESSION['usuario_id']) AND ($_SESSION['nivel_acesso'] == 4)) {
     // Redireciona o visitante de volta pro login
     header("Location: http://localhost/gestaoepi/codes/RH/telaRH.php");
 }
-elseif (isset($_SESSION['UsuarioID']) AND ($_SESSION['UsuarioNivel'])== 5) {
+elseif (isset($_SESSION['usuario_id']) AND ($_SESSION['nivel_acesso'])== 5) {
     // Redireciona o visitante de volta pro login
     header("Location: http://localhost/gestaoepi/codes/admin/admin.php");
 }

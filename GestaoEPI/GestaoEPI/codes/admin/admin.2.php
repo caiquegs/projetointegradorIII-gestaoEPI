@@ -35,7 +35,7 @@ require_once 'conexao.php';
 
 session_start();
 
-if (!isset($_SESSION['UsuarioID']) and (!isset($_SESSION['UsuarioNivel']))) {
+if (!isset($_SESSION['usuario_id']) and (!isset($_SESSION['nivel_acesso']))) {
     header("Location: http://localhost/gestaoepi/codes/login.html");
     exit;
 }
