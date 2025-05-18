@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="http://localhost/gestaoepi/codes/images/Logo 1 (Variação 1) (Sem Slogan).png">
+    <link rel="icon" href="http://localhost/gestaoepi/codes/images/Logo 1">
 
     <!-- SCRIPTS -->
     <link rel="stylesheet" href="http://localhost/gestaoepi/styles/telaSeguranca.css" />
@@ -51,7 +51,7 @@ if (!isset($_SESSION['usuario_id']) and (!isset($_SESSION['nivel_acesso']))) {
 
 <header>
         <nav class="navbar navbar-custom" style="height: 75px; ">
-            <a><img class="logoVW" src="http://localhost/gestaoepi/codes/images/logoVolksW.png"></a>
+            <a><img class="logohn" src="http://localhost/gestaoepi/codes/images/Logo-Hidrojato-optimized-white"></a>
             <p class="logo centro"><b>Tela de Acesso -- Gestor</b></p>
             <ul class="NavBarLinks">
                 <li><a href="http://localhost/gestaoepi/codes/php/logout.php" class="centro cor"><b>Sair</b></a></li>

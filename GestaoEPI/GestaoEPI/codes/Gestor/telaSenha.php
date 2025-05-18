@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="http://localhost/gestaoepi/codes/images/Logo 1 (Variação 1) (Sem Slogan).png">
+    <link rel="icon" href="http://localhost/gestaoepi/codes/images/Logo 1">
 
     <!-- SCRIPTS -->
     <link rel="stylesheet" href="http://localhost/gestaoepi/styles/telaSeguranca.css" />
@@ -83,7 +83,7 @@ if (!isset($_SESSION['usuario_id']) and (!isset($_SESSION['nivel_acesso']))) {
     
     ?>
 
-    <div class="container"><img src="http://localhost/gestaoepi/codes/images/Logo 1 (Variação 1) (Sem Slogan).png" class="rounded mx-auto d-block" style="width:300px; /* you can use % */ 
+    <div class="container"><img src="http://localhost/gestaoepi/codes/images/Logo 1" class="rounded mx-auto d-block" style="width:300px; /* you can use % */ 
     height: auto;"> </div>
 
     <div class="container" style="border: 1px solid silver; width: 30%; border-radius: 10px; padding: 25px;   position: fixed;
