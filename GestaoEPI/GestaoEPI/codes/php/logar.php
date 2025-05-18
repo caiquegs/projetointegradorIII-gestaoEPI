@@ -10,7 +10,7 @@ include "conexao.php";
   $senha = $_POST['senha'];
 
   // Validação do usuário/senha digitados
-  $sql = "SELECT `id`, `nivel_acesso` FROM `usuarios` WHERE (`usuario` = '". $usuario ."') AND (`senha` = '". sha1($senha) ."') AND (`ativo` = 1) LIMIT 1";
+  $sql = "SELECT `id`, `nivel_acesso` FROM `usuarios` WHERE (`nome` = '". $usuario ."') AND (`senha` = '". sha1($senha) ."') LIMIT 1";
   $query = mysqli_query($conn, $sql);
 
 
@@ -25,7 +25,7 @@ include "conexao.php";
 
       // Salva os dados encontrados na sessão
       $_SESSION['usuario_id'] = $resultado['id'];
-      $_SESSION['nivel_acesso'] = $resultado['nivel'];
+      $_SESSION['nivel_acesso'] = $resultado['nivel_acesso'];
       
 
   }
