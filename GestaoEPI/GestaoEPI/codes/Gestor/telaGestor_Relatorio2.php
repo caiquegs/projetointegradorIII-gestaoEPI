@@ -28,7 +28,7 @@
 </head>
 
 <body>
-    <?php
+
 <?php
 require_once 'conexao.php'; 
 session_start();

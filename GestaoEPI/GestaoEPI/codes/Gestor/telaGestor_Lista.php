@@ -30,7 +30,6 @@
 <body>
     
 <?php
-<?php
 require_once 'conexao.php'; 
 session_start();
 if (!isset($_SESSION['usuario_id']) and (!isset($_SESSION['nivel_acesso']))) {
